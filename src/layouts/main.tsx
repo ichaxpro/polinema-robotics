@@ -15,7 +15,7 @@ export default function MainLayout() {
             <Hero />
             <DivisionGrid />
             <AchievementTimeline />
-            {/* <TeamMembers /> */}
+            <TeamMembers />
             <Gallery />
             <Footer />
         </main>
