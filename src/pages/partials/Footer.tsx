@@ -10,18 +10,18 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div className="md:col-span-2">
                         <Link href="/" className="flex items-center gap-2 mb-6 group">
-                            <div className="p-2 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg">
+                            {/* <div className="p-2 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg">
                                 <Cpu className="w-6 h-6 text-white" />
-                            </div>
+                            </div> */}
                             <span className="text-xl font-bold text-white font-mono">
-                                PRT<span className="text-cyan-400">.OFFICIAL</span>
+                                POLINEMA<span className="text-cyan-400">ROBOTICS</span>
                             </span>
                         </Link>
                         <p className="text-slate-400 max-w-sm mb-6 leading-relaxed">
                             Polinema Robotics Team is a student-led organization dedicated to advancing robotics technology through innovation, competition, and research.
                         </p>
                         <div className="flex gap-4">
-                            {[Instagram, Twitter, Linkedin, Github].map((Icon, i) => (
+                            {[Instagram, Linkedin,].map((Icon, i) => (
                                 <a
                                     key={i}
                                     href="#"
