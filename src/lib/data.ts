@@ -104,28 +104,28 @@ export const achievements: Achievement[] = [
 export const members: Member[] = [
     {
         id: "m1",
-        name: "Alex 'Cyber' Wijaya",
+        name: "user 1",
         role: "Chairperson",
         image: "",
         socials: { linkedin: "#", github: "#" },
     },
     {
         id: "m2",
-        name: "Sarah 'Spark' Putri",
+        name: "user 2",
         role: "Head of Engineering",
         image: "",
         socials: { linkedin: "#", instagram: "#" },
     },
     {
         id: "m3",
-        name: "Dimas 'Glitch' Pratama",
+        name: "user 3",
         role: "Lead Programmer",
         image: "",
         socials: { github: "#" },
     },
     {
         id: "m4",
-        name: "Nadia 'Servo' Kusuma",
+        name: "user 4",
         role: "Lead Mechanic",
         image: "",
         socials: { instagram: "#" },
