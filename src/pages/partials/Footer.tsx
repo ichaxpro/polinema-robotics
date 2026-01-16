@@ -14,7 +14,7 @@ export default function Footer() {
                                 <Cpu className="w-6 h-6 text-white" />
                             </div> */}
                             <span className="text-xl font-bold text-white font-mono">
-                                POLINEMA<span className="text-cyan-400">ROBOTICS</span>
+                                POLINEMA<span className="text-cyan-400"> ROBOTICS</span>
                             </span>
                         </Link>
                         <p className="text-slate-400 max-w-sm mb-6 leading-relaxed">

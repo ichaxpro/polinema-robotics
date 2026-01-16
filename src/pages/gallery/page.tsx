@@ -31,9 +31,12 @@ export default function Gallery() {
             <div className="container mx-auto px-4 relative z-10">
                 <div className="mb-20 flex flex-col items-center justify-center gap-6 text-center">
                     <div>
-                        <h2 className="text-4xl md:text-6xl font-bold text-white font-gochi leading-none">
+                        <h2 className="text-4xl md:text-6xl font-bold text-white font-gochi leading-none mb-4">
                             GALERI
                         </h2>
+                        <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                            Mengabadikan jejak inovasi, atmosfer kompetisi, dan momen berharga dalam perjalanan teknologi kami.
+                        </p>
                     </div>
                 </div>
 
@@ -91,23 +94,7 @@ export default function Gallery() {
                                     {/* Gradient overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
 
-                                    {/* Hover Overlay Info */}
-                                    <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                                        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                            <div className="flex justify-between items-end">
-                                                <div>
-                                                    <p className="text-cyan-400 font-mono text-xs mb-1">IMG_RAW_{100 + index}.CR2</p>
-                                                    <h3 className="text-white font-bold text-lg">Dokumentasi</h3>
-                                                </div>
-
-                                                <div className="flex gap-2">
-                                                    <button className="p-2 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-cyan-500 hover:text-black transition-colors">
-                                                        <Maximize2 className="w-4 h-4" />
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
 
                                     {/* Persistent Corner Decor */}
                                     <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm border border-white/10 px-2 py-1 rounded text-[10px] font-mono text-slate-300 uppercase z-10">
