@@ -3,6 +3,7 @@
 import Navbar from "@/pages/partials/Navbar";
 import Footer from "@/pages/partials/Footer";
 import Hero from "@/pages/landing/Hero";
+import About from "@/pages/landing/About";
 import DivisionGrid from "@/pages/landing/DivisionGrid";
 import AchievementTimeline from "@/pages/landing/AchievementTimeline";
 import TeamMembers from "@/pages/landing/TeamMembers";
@@ -13,6 +14,7 @@ export default function MainLayout() {
         <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-500/30 selection:text-cyan-200">
             <Navbar />
             <Hero />
+            <About />
             <DivisionGrid />
             <AchievementTimeline />
             <TeamMembers />

@@ -16,7 +16,7 @@ const navLinks: NavLink[] = [
     { name: 'Beranda', href: '/' },
     {
         name: 'Divisi',
-        href: '#divisions',
+        href: '#', // Set to # to prevent scrolling
         children: teams.map(t => ({ name: t.name, href: `#${t.id}` }))
     },
     { name: 'Prestasi', href: '#achievements' },
@@ -65,13 +65,23 @@ export default function Navbar() {
                                 onMouseEnter={() => setHoveredNav(link.name)}
                                 onMouseLeave={() => setHoveredNav(null)}
                             >
-                                <Link
-                                    href={link.href}
-                                    className="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors py-2"
-                                >
-                                    {link.name}
-                                    {link.children && <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />}
-                                </Link>
+                                {link.children ? (
+                                    <button
+                                        type="button"
+                                        className="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors py-2 cursor-pointer bg-transparent border-0 font-inherit"
+                                        onClick={(e) => e.preventDefault()}
+                                    >
+                                        {link.name}
+                                        <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                                    </button>
+                                ) : (
+                                    <Link
+                                        href={link.href}
+                                        className="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors py-2"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )}
 
                                 {/* Dropdown */}
                                 <AnimatePresence>
@@ -98,7 +108,7 @@ export default function Navbar() {
                                     )}
                                 </AnimatePresence>
 
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
+                                <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all ${!link.children ? 'group-hover:w-full' : ''}`} />
                             </div>
                         ))}
                     </div>
@@ -133,20 +143,22 @@ export default function Navbar() {
                             {navLinks.map((link) => (
                                 <div key={link.name} className="flex flex-col">
                                     <div className="flex items-center justify-between group">
-                                        <Link
-                                            href={link.href}
-                                            onClick={() => !link.children && setIsMobileMenuOpen(false)}
-                                            className="text-lg font-medium text-slate-300 hover:text-cyan-400 py-2"
-                                        >
-                                            {link.name}
-                                        </Link>
-                                        {link.children && (
+                                        {link.children ? (
                                             <button
                                                 onClick={() => setMobileExpanded(mobileExpanded === link.name ? null : link.name)}
-                                                className="p-2 text-slate-400 hover:text-white"
+                                                className="text-lg font-medium text-slate-300 hover:text-cyan-400 py-2 flex items-center justify-between w-full"
                                             >
+                                                {link.name}
                                                 <ChevronDown className={`w-5 h-5 transition-transform ${mobileExpanded === link.name ? 'rotate-180' : ''}`} />
                                             </button>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                className="text-lg font-medium text-slate-300 hover:text-cyan-400 py-2 block w-full"
+                                            >
+                                                {link.name}
+                                            </Link>
                                         )}
                                     </div>
 

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { members } from "@/lib/data";
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { Github, Linkedin, Instagram, User } from "lucide-react";
 
 export default function TeamMembers() {
     return (
@@ -25,12 +25,16 @@ export default function TeamMembers() {
                             transition={{ delay: index * 0.1 }}
                             className="group relative bg-slate-900 rounded-2xl p-6 border border-slate-800 hover:border-violet-500/50 transition-colors text-center"
                         >
-                            <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-slate-700 group-hover:border-violet-500 transition-colors">
-                                <img
-                                    src={member.image}
-                                    alt={member.name}
-                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                                />
+                            <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-slate-700 group-hover:border-violet-500 transition-colors bg-slate-800 flex items-center justify-center">
+                                {member.image ? (
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                    />
+                                ) : (
+                                    <User className="w-16 h-16 text-slate-600 group-hover:text-violet-400 transition-colors" />
+                                )}
                             </div>
 
                             <h3 className="text-lg font-bold text-white mb-1 group-hover:text-violet-400 transition-colors">

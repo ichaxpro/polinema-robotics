@@ -9,8 +9,8 @@ export default function Hero() {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 pt-20">
             {/* Background Effects */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[128px] animate-pulse" />
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-[128px] animate-pulse delay-1000" />
+                {/* <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[128px] animate-pulse" />
+                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-[128px] animate-pulse delay-1000" /> */}
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
             </div>
 
@@ -29,10 +29,10 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 font-gochi"
+                    className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-gochi leading-[0.8] py-4"
                 >
                     BERINOVASI <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-400 to-orange-400 font-gochi tracking-widest">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-400 to-orange-400 font-gochi tracking-widest px-2">
                         TANPA BATAS
                     </span>
                 </motion.h1>
@@ -60,10 +60,7 @@ export default function Hero() {
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-violet-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>
 
-                    <button className="px-8 py-4 bg-slate-900 text-white font-bold text-lg rounded-full border border-slate-800 hover:bg-slate-800 transition-colors flex items-center gap-2">
-                        <Cpu className="w-5 h-5 text-slate-400" />
-                        Lihat Dokumentasi
-                    </button>
+
                 </motion.div>
             </div>
 
