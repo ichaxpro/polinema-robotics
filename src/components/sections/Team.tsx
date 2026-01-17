@@ -9,7 +9,7 @@ export default function TeamMembers() {
         <section className="py-24 bg-slate-950" id="team">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-mono">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-gochi">
                         <span className="text-violet-500">INSINYUR</span> KAMI
                     </h2>
                     <p className="text-slate-400">Berkenalan dengan para ahli di balik mesin.</p>
