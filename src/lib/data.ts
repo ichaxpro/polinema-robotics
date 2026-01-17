@@ -34,7 +34,7 @@ export const teams: Team[] = [
         description: "Tim spesialis KRAI (Kontes Robot ABU Indonesia). Mengembangkan robot manual dan otomatis dengan presisi tinggi.",
         category: "KRAI",
         image: "/images/teams/aburobonema.jpg", // Placeholder
-
+        color: "from-cyan-500 to-blue-600",
     },
     {
         id: "aroc-pl",
@@ -42,6 +42,7 @@ export const teams: Team[] = [
         description: "Tim Robot Humanoid (KRSBI Humanoid). Riset mendalam tentang keseimbangan, visi komputer, dan berjalan otonom.",
         category: "KRSBI Humanoid",
         image: "/images/teams/aroc.png",
+        color: "from-rose-500 to-pink-600",
     },
     {
         id: "botema",
@@ -49,6 +50,7 @@ export const teams: Team[] = [
         description: "Tim Robot Sepak Bola Beroda (KRSBI Beroda). Fokus pada navigasi omni-directional dan strategi permainan berbasis AI.",
         category: "KRSBI Beroda",
         image: "/images/teams/botema.jpg",
+        color: "from-amber-500 to-orange-600",
     },
     {
         id: "rotama",
@@ -56,6 +58,7 @@ export const teams: Team[] = [
         description: "Tim Robot Tari (KRSTI). Menggabungkan seni budaya dan teknologi robotika dalam gerakan tari yang sinkron.",
         category: "KRSTI",
         image: "/images/teams/rotama.jpg",
+        color: "from-violet-500 to-purple-600",
     },
     {
         id: "robosarema",
@@ -63,6 +66,7 @@ export const teams: Team[] = [
         description: "Tim Robot SAR (KRSRI). Robot otonom berkaki yang dirancang untuk misi penyelamatan di medan bencana.",
         category: "KRSRI",
         image: "/images/teams/robosarema.jpeg",
+        color: "from-emerald-500 to-green-600",
     },
 ];
 
