@@ -17,7 +17,7 @@ const navLinks: NavLink[] = [
     {
         name: 'Divisi',
         href: '#', // Set to # to prevent scrolling
-        children: teams.map(t => ({ name: t.name, href: `#${t.id}` }))
+        children: teams.map(t => ({ name: t.name, href: `/divisions/${t.id}` }))
     },
     { name: 'Prestasi', href: '#achievements' },
     { name: 'Tim', href: '#team' },
