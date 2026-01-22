@@ -70,12 +70,12 @@ export default function Hero() {
                     }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <button className="group relative px-8 py-4 bg-white text-slate-950 font-bold text-lg rounded-full overflow-hidden hover:scale-105 transition-transform duration-300">
+                    {/* <button className="group relative px-8 py-4 bg-white text-slate-950 font-bold text-lg rounded-full overflow-hidden hover:scale-105 transition-transform duration-300">
                         <span className="relative z-10 flex items-center gap-2">
                             Jelajahi Divisi <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </span>
                         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-violet-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </button>
+                    </button> */}
 
 
                 </motion.div>

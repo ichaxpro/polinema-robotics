@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Gochi_Hand } from "next/font/google";
 import "./globals.css";
+import Preloader from "@/components/layout/Preloader";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -24,6 +25,9 @@ const gochiHand = Gochi_Hand({
 export const metadata: Metadata = {
     title: "Polinema Robotics",
     description: "Official Polinema Robotics Team Landing Page. Innovating Beyond Limits.",
+    icons: {
+        icon: "/images/logo polinema robotics.png",
+    },
 };
 
 export default function RootLayout({
@@ -34,6 +38,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${gochiHand.variable} scroll-smooth`}>
             <body className="font-sans bg-slate-950 antialiased" suppressHydrationWarning>
+                <Preloader />
                 {children}
             </body>
         </html>
