@@ -28,29 +28,29 @@ export default function Aburobonema() {
     ];
 
     const teamMembers = [
-        { name: "Mochamad Widdad El Aufany", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Moh. Rif'at Nur Fahri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Alif Nugroho", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Orri' Syahputra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Zahrina Rana Nadhila", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Putri Wahyu Ilahi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Syahrul Fauzi", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Husnil Al Fajri", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Nizam Agatha Lukito Putra", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Bintang Yoga Samiaji", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Tjipto Aria Bima", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Ananda Vito Nur Islam", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Handi Riswanto", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Siti Nikmatus Sholihah", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Reny Ambarwati", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Mohammad Al Hafis Hidayatulloh", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Naufal Faqih Ramadhan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Muhammad Fitroh Amin", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "M Ergiansyah S", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "M. Baharudin Fajar Ramadan", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Faqih Azhar Fathurrochman", role: "Anggota ABUROBONEMA", image: "", socials: {} },
-        { name: "Moh. Nafis Ali Fahri", role: "Anggota ABUROBONEMA", image: "", socials: { linkedin: "#" } },
-        { name: "Imam Mustaqim", role: "Anggota ABUROBONEMA", image: "", socials: { github: "#", instagram: "#" } },
+        { name: "Mochamad Widdad El Aufany", role: "Ketua ABUROBONEMA", image: "", socials: {} },
+        { name: "Moh. Rif'at Nur Fahri", role: "Divisi Software", image: "", socials: {} },
+        { name: "Muhammad Alif Nugroho", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Muhammad Orri' Syahputra", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Zahrina Rana Nadhila", role: "Divisi Project Manager", image: "", socials: {} },
+        { name: "Putri Wahyu Ilahi", role: "Divisi Project Manager", image: "", socials: {} },
+        { name: "Syahrul Fauzi", role: "Divisi Software", image: "", socials: {} },
+        { name: "Husnil Al Fajri", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Nizam Agatha Lukito Putra", role: "Divisi Project Manager", image: "", socials: {} },
+        { name: "Bintang Yoga Samiaji", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Tjipto Aria Bima", role: "Divisi Software", image: "", socials: {} },
+        { name: "Ananda Vito Nur Islam", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Handi Riswanto", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Siti Nikmatus Sholihah", role: "Divisi Project Manager", image: "", socials: {} },
+        { name: "Reny Ambarwati", role: "Divisi Software", image: "", socials: {} },
+        { name: "Mohammad Al Hafis Hidayatulloh", role: "Divisi Software", image: "", socials: {} },
+        { name: "Naufal Faqih Ramadhan", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Muhammad Fitroh Amin", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "M Ergiansyah S", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "M. Baharudin Fajar Ramadan", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Faqih Azhar Fathurrochman", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Moh. Nafis Ali Fahri", role: "Divisi Software", image: "", socials: { linkedin: "#" } },
+        { name: "Imam Mustaqim", role: "Divisi Elektrik", image: "", socials: { github: "#", instagram: "#" } },
     ];
 
     const containerVariants = {
@@ -261,7 +261,7 @@ export default function Aburobonema() {
                             </motion.h2>
                             <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                 <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                    Tim <strong>{team.name}</strong> mendedikasikan diri untuk mendorong batas kemampuan robotika. Kami menggabungkan <em>engineering</em> presisi dengan algoritma cerdas untuk menciptakan robot yang adaptif dan tangguh.
+                                    Tim <strong>{team.name}</strong> salah satu tim robotik Politeknik Negeri Malang yang fokus pada ajang KRI (Kontes Robot Indonesia) untuk divisi KRAI (Kontes Robot ABU Indonesia). Tema perlombaan KRAI setiap tahunnya berbeda, mengacu pada ABU Robocon (Asia-Pacific Broadcasting Union Robot Contest) yang mana pada tahun ini memiliki tema "Robot Kungfu". Tim Aburobonema telah meraih 8 juara selama 5 tahun berturut-urut. Aburobonema memiliki tiga divisi yaitu: 
                                 </p>
                                 <motion.ul
                                     variants={containerVariants}
@@ -270,7 +270,7 @@ export default function Aburobonema() {
                                     viewport={{ once: true, margin: "-50px" }}
                                     className="grid grid-cols-1 md:grid-cols-2 gap-4"
                                 >
-                                    {['Mekanik Presisi CAD/CAM', 'Sistem Kontrol PID & Fuzzy', 'Computer Vision AI', 'Mikrokontroler STM32/ESP32'].map((item, i) => (
+                                    {['Divisi Mekanik', 'Divisi Elektrik', 'Divisi Software', 'Divisi Project Manager'].map((item, i) => (
                                         <motion.li
                                             key={i}
                                             variants={itemVariants}
