@@ -1,14 +1,17 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stage, Html, useProgress } from '@react-three/drei';
+import { OrbitControls, Stage, Html } from '@react-three/drei';
 import RobotModel from './RobotModel';
 
+// Custom loader without useProgress to avoid state conflicts
 function Loader() {
-    const { progress } = useProgress();
     return (
         <Html center>
-            <div className="text-white font-mono text-sm whitespace-nowrap bg-slate-900/80 px-4 py-2 rounded-full backdrop-blur-md border border-slate-700">
-                {progress.toFixed(0)}% loaded
+            <div className="flex flex-col items-center gap-2">
+                <div className="w-12 h-12 border-4 border-cyan-500/30 border-t-cyan-400 rounded-full animate-spin" />
+                <div className="text-cyan-400 font-mono text-xs tracking-widest animate-pulse">
+                    LOADING SYSTEM
+                </div>
             </div>
         </Html>
     );

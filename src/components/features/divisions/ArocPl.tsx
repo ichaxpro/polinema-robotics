@@ -331,7 +331,7 @@ export default function ArocPl() {
                                 viewport={{ once: true, margin: "-50px" }}
                                 className="grid grid-cols-2 md:grid-cols-4 gap-4"
                             >
-                                {galleryImages.slice(0, 8).map((src, index) => (
+                                {galleryImages.slice(0, 8).map((item, index) => (
                                     <motion.div
                                         key={index}
                                         variants={itemVariants}
@@ -341,7 +341,7 @@ export default function ArocPl() {
                                         )}
                                     >
                                         <Image
-                                            src={src}
+                                            src={item.src}
                                             alt={`Galeri ${index + 1}`}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"

@@ -1,9 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { galleryImages } from "@/lib/data";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,6 +13,16 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
 export default function Gallery() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [activeFilter, setActiveFilter] = useState("Semua");
+
+    // Extract unique years from data, sort descending
+    const years = ["Semua", ...Array.from(new Set(galleryImages.map(img => img.year))).sort().reverse()];
+
+    const filteredImages = activeFilter === "Semua"
+        ? galleryImages
+        : galleryImages.filter(img => img.year === activeFilter);
+
     return (
         <section className="py-24 bg-slate-950 relative overflow-hidden" id="gallery">
             {/* Seamless Transition Gradients */}
@@ -103,14 +114,14 @@ export default function Gallery() {
                             }
                         }}
                     >
-                        {galleryImages.map((src, index) => (
+                        {galleryImages.map((item, index) => (
                             <SwiperSlide key={index} className="w-[280px] sm:w-[350px] md:w-[400px] !h-[400px] relative">
                                 <div
                                     className="relative w-full h-full group rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl transition-transform duration-300 hover:scale-105"
                                 >
                                     {/* Image - Direct Child of Relative Container */}
                                     <Image
-                                        src={src}
+                                        src={item.src}
                                         alt={`Dokumentasi ${index + 1}`}
                                         fill
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -121,11 +132,14 @@ export default function Gallery() {
                                     {/* Gradient overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
 
-
-
                                     {/* Persistent Corner Decor */}
                                     <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-sm border border-white/10 px-2 py-1 rounded text-[10px] font-mono text-slate-300 uppercase z-10">
-                                        Polinema Robotics
+                                        {item.year}
+                                    </div>
+                                    <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <span className="text-white font-mono text-sm bg-cyan-500/20 border border-cyan-500/50 px-2 py-1 rounded">
+                                            {item.category || 'Documentation'}
+                                        </span>
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -141,7 +155,10 @@ export default function Gallery() {
                     }}
                     className="mt-20 flex justify-center"
                 >
-                    <button className="group relative px-8 py-3 bg-slate-900 border border-slate-700 hover:border-cyan-500 text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="group relative px-8 py-3 bg-slate-900 border border-slate-700 hover:border-cyan-500 text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]"
+                    >
                         <span className="relative z-10 flex items-center gap-2 font-mono font-bold">
                             LIHAT SEMUA<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </span>
@@ -150,7 +167,100 @@ export default function Gallery() {
                 </motion.div>
             </motion.div>
 
+            {/* FULLSCREEN GALLERY MODAL */}
+            <AnimatePresence>
+                {isModalOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl overflow-y-auto"
+                    >
+                        <div className="container mx-auto px-4 pb-8 min-h-screen flex flex-col">
+                            {/* Modal Header */}
+                            {/* Modal Header Navbar */}
+                            <div className="sticky top-0 z-50 -mx-4 px-4 py-4 mb-8 bg-slate-950/80 backdrop-blur-md border-b border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 relative">
+                                        <Image
+                                            src="/images/logo%20polinema%20robotics.png"
+                                            alt="Logo"
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
+                                    <h3 className="text-xl md:text-2xl font-bold text-white poppins tracking-wide">
+                                        GALERI <span className="text-cyan-400">ROBOTICS</span>
+                                    </h3>
+                                </div>
 
+                                {/* Filters */}
+                                <div className="flex flex-wrap gap-2 justify-center bg-slate-900/50 p-1.5 rounded-full border border-white/5">
+                                    {years.map(year => (
+                                        <button
+                                            key={year}
+                                            onClick={() => setActiveFilter(year)}
+                                            className={`px-4 py-1.5 rounded-full text-sm font-mono transition-all duration-300 ${activeFilter === year
+                                                ? 'bg-cyan-500 text-slate-950 font-bold shadow-lg shadow-cyan-500/25'
+                                                : 'text-slate-400 hover:text-white hover:bg-white/5'
+                                                }`}
+                                        >
+                                            {year}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                {/* Close Button */}
+                                <button
+                                    onClick={() => setIsModalOpen(false)}
+                                    className="group flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:bg-red-500/10 hover:text-red-500 hover:border-red-500/50 transition-all font-mono text-sm"
+                                >
+                                    <span>TUTUP</span>
+                                    <svg className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                                </button>
+                            </div>
+
+                            {/* Grid Layout */}
+                            <motion.div
+                                layout
+                                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-20"
+                            >
+                                <AnimatePresence mode="popLayout">
+                                    {filteredImages.map((item, idx) => (
+                                        <motion.div
+                                            key={`${item.src}-${idx}`}
+                                            layout
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.8 }}
+                                            transition={{ duration: 0.3 }}
+                                            className="relative group aspect-square rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 break-inside-avoid"
+                                        >
+                                            <Image
+                                                src={item.src}
+                                                alt={`Gallery ${idx}`}
+                                                fill
+                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            />
+                                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-center p-4">
+                                                <span className="text-cyan-400 font-bold text-lg mb-1">{item.year}</span>
+                                                <span className="text-slate-300 text-sm">{item.category}</span>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </AnimatePresence>
+                            </motion.div>
+
+                            {filteredImages.length === 0 && (
+                                <div className="text-center py-20 text-slate-500 font-mono">
+                                    Tidak ada foto di tahun ini.
+                                </div>
+                            )}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }

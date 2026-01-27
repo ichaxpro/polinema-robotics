@@ -244,14 +244,14 @@ export default function DivisionDetail({ teamId }: DivisionDetailProps) {
                                     viewport={{ once: true, margin: "-50px" }}
                                     className="grid grid-cols-2 md:grid-cols-3 gap-4"
                                 >
-                                    {galleryImages.slice(0, 6).map((src, index) => (
+                                    {galleryImages.slice(0, 6).map((item, index) => (
                                         <motion.div
                                             key={index}
                                             variants={itemVariants}
                                             className="relative aspect-square rounded-2xl overflow-hidden group border border-slate-800 cursor-pointer"
                                         >
                                             <Image
-                                                src={src}
+                                                src={item.src}
                                                 alt={`Galeri ${index + 1}`}
                                                 fill
                                                 className="object-cover transition-transform duration-500 group-hover:scale-110"

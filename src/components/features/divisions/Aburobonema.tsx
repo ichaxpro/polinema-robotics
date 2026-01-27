@@ -261,7 +261,7 @@ export default function Aburobonema() {
                             </motion.h2>
                             <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50">
                                 <p className="text-slate-300 leading-relaxed mb-6 text-lg">
-                                    Tim <strong>{team.name}</strong> salah satu tim robotik Politeknik Negeri Malang yang fokus pada ajang KRI (Kontes Robot Indonesia) untuk divisi KRAI (Kontes Robot ABU Indonesia). Tema perlombaan KRAI setiap tahunnya berbeda, mengacu pada ABU Robocon (Asia-Pacific Broadcasting Union Robot Contest) yang mana pada tahun ini memiliki tema "Robot Kungfu". Tim Aburobonema telah meraih 8 juara selama 5 tahun berturut-urut. Aburobonema memiliki tiga divisi yaitu: 
+                                    Tim <strong>{team.name}</strong> salah satu tim robotik Politeknik Negeri Malang yang fokus pada ajang KRI (Kontes Robot Indonesia) untuk divisi KRAI (Kontes Robot ABU Indonesia). Tema perlombaan KRAI setiap tahunnya berbeda, mengacu pada ABU Robocon (Asia-Pacific Broadcasting Union Robot Contest) yang mana pada tahun ini memiliki tema "Robot Kungfu". Tim Aburobonema telah meraih 8 juara selama 5 tahun berturut-urut. Aburobonema memiliki tiga divisi yaitu:
                                 </p>
                                 <motion.ul
                                     variants={containerVariants}
@@ -321,7 +321,7 @@ export default function Aburobonema() {
                                 viewport={{ once: true, margin: "-50px" }}
                                 className="grid grid-cols-2 md:grid-cols-4 gap-4"
                             >
-                                {galleryImages.slice(0, 8).map((src, index) => (
+                                {galleryImages.slice(0, 8).map((item, index) => (
                                     <motion.div
                                         key={index}
                                         variants={itemVariants}
@@ -331,7 +331,7 @@ export default function Aburobonema() {
                                         )}
                                     >
                                         <Image
-                                            src={src}
+                                            src={item.src}
                                             alt={`Galeri ${index + 1}`}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
