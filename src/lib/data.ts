@@ -97,30 +97,30 @@ export const achievements: Achievement[] = [
 export const members: Member[] = [
     {
         id: "m1",
-        name: "user 1",
-        role: "Dosen Pembimbing ABUROBONEMA",
+        name: "GILLANG AL AZHAR, S.S.T., M.Tr.T",
+        role: "Pembimbing Tim Robot ABUROBONEMA",
         image: "",
         socials: { linkedin: "#", github: "#" },
     },
     {
         id: "m2",
-        name: "user 2",
-        role: "DOSEN PEMBIMBING AROC-PL",
+        name: "MUHAMMAD SYIRAJUDDIN S., S.T., M.T",
+        role: "Pembimbing Tim Robot AROC-PL",
         image: "",
         socials: { linkedin: "#", instagram: "#" },
     },
     {
         id: "m3",
-        name: "user 3",
-        role: "Dosen Pembimbing ROBOSAREMA",
+        name: "GALIH PUTRA RIATMA, S.ST., M.T",
+        role: "Pembimbing Tim Robot ROBOSAREMA",
         image: "",
         socials: { github: "#" },
     },
 
     {
         id: "m5",
-        name: "user 5",
-        role: "Dosen Pembimbing BOTEMA",
+        name: "ADZIKIRANI, S.S.T., M.Tr.T",
+        role: "Pembimbing Tim Robot BOTEMA",
         image: "",
         socials: { instagram: "#" },
     },
