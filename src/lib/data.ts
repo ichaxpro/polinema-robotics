@@ -97,20 +97,54 @@ export const achievements: Achievement[] = [
 export const members: Member[] = [
     {
         id: "m1",
-        name: "GILLANG AL AZHAR, S.S.T., M.Tr.T",
+        name: "Ir. PIPIT WAHYU NUGROHO, M.T",
+        role: "Wakil Direktur 3",
+        image: "",
+        socials: { linkedin: "#", github: "#" },
+    },
+
+    {
+        id: "m2",
+        name: "GILLANG AL AZHAR, S.ST., M.Tr.T",
+        role: "Ketua Umum Tim Robot & Pembimbing Tim Robot ABUROBONEMA",
+        image: "",
+        socials: { linkedin: "#", github: "#" },
+    },
+    
+    {
+        id: "m3",
+        name: "ROHMANITA DUANAPUTRI, S.ST., M.T.",
+        role: "Sekretaris Tim Robot & Pembimbing Tim Robot ABUROBONEMA",
+        image: "",
+        socials: { linkedin: "#", github: "#" },
+    },
+
+    {
+        id: "m4",
+        name: "INDRAZNO SIRAJUDDIN, S.T., M.T., Ph.D.",
         role: "Pembimbing Tim Robot ABUROBONEMA",
         image: "",
         socials: { linkedin: "#", github: "#" },
     },
+
     {
-        id: "m2",
+        id: "m5",
         name: "MUHAMMAD SYIRAJUDDIN S., S.T., M.T",
         role: "Pembimbing Tim Robot AROC-PL",
         image: "",
         socials: { linkedin: "#", instagram: "#" },
     },
+
     {
-        id: "m3",
+        id: "m6",
+        name: "GALUH PRAWESTRI CITRA HANDANI, S.T., M.T.",
+        role: "Pembimbing Tim Robot AROC-PL",
+        image: "",
+        socials: { linkedin: "#", instagram: "#" },
+    },
+
+    {
+        id: "m7",
         name: "GALIH PUTRA RIATMA, S.ST., M.T",
         role: "Pembimbing Tim Robot ROBOSAREMA",
         image: "",
@@ -118,8 +152,24 @@ export const members: Member[] = [
     },
 
     {
-        id: "m5",
+        id: "m8",
+        name: "WAHYU AULIA NURWICAKSANA, S.S.T., M.Tr.T",
+        role: "Pembimbing Tim Robot ROBOSAREMA",
+        image: "",
+        socials: { github: "#" },
+    },
+
+    {
+        id: "m9",
         name: "ADZIKIRANI, S.S.T., M.Tr.T",
+        role: "Pembimbing Tim Robot BOTEMA",
+        image: "",
+        socials: { instagram: "#" },
+    },
+
+    {
+        id: "m10",
+        name: "DINDA AYU PERMATASARI, S.S.T., M.T",
         role: "Pembimbing Tim Robot BOTEMA",
         image: "",
         socials: { instagram: "#" },
