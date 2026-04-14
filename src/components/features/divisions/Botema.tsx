@@ -22,23 +22,23 @@ export default function Botema() {
     ];
 
     // Mock Data for Team Members
-    const teamMembers: { name: string; role: string; image: string; socials: { github?: string; linkedin?: string; instagram?: string } }[] = [
-        { name: "Cahya Purna Yudha", role: "Ketua Tim BOTEMA", image: "", socials: {} },
-        { name: "Okta Karyamadhani Wibowo", role: "Divisi Elektrik", image: "", socials: {} },
+    const teamMembers = [
+        { name: "Cahya Purna Yudha", role: "Ketua Tim BOTEMA", image: "/images/botema/Cahya Purna Yudha_Ketua.JPG", socials: {} },
+        { name: "Okta Karyamadhani Wibowo", role: "Divisi Elektrik", image: "/images/botema/Okta Karyamadhani W._Elektrik.png", socials: {} },
         { name: "Tyo Septyan Eka Ramadhany", role: "Divisi Mekanik", image: "", socials: {} },
-        { name: "Sulthon Uvan Maulana", role: "Divisi Software", image: "", socials: {} },
+        { name: "Sulthon Uvan Maulana", role: "Divisi Software", image: "/images/botema/Sulthon Uvan Maulana_Elektrik.JPG", socials: {} },
         { name: "Narendra Ramadhana Dava Saputra", role: "Divisi Software", image: "", socials: {} },
-        { name: "Adinda Mirza Devani", role: "Divisi Software", image: "", socials: {} },
-        { name: "Moh. Suryo Lego A", role: "Divisi Mekanik", image: "", socials: {} },
-        { name: "Ricke Dyah Marieta", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Adinda Mirza Devani", role: "Divisi Software", image: "/images/botema/Adinda Mirza Devani_Software.JPG", socials: {} },
+        { name: "Moh. Suryo Lego A", role: "Divisi Mekanik", image: "/images/botema/Moh. Suryo Lego Abdullah_Mekanik.png", socials: {} },
+        { name: "Ricke Dyah Marieta", role: "Divisi Mekanik", image: "/images/botema/Ricke Dyah Marieta_Mekanik.JPG", socials: {} },
         { name: "Azaria Khairunnisa Fawwaz", role: "Divisi Mekanik", image: "", socials: {} },
-        { name: "Fitri Athaya Nur Azizah", role: "Divisi Manager", image: "", socials: {} },
-        { name: "Raya Bagas Wisesa", role: "Divisi Mekanik", image: "", socials: {} },
+        { name: "Fitri Athaya Nur Azizah", role: "Divisi Manager", image: "/images/botema/Fitri Athaya Nur Azizah_Project Manager.JPG", socials: {} },
+        { name: "Raya Bagas Wisesa", role: "Divisi Mekanik", image: "/images/botema/Raya Bagas W._Mekanik.png", socials: {} },
         { name: "Fata Haidar Aly", role: "Divisi Software", image: "", socials: {} },
-        { name: "Aditya Rizky Nurian", role: "Divisi Software", image: "", socials: {} },
-        { name: "Dhinda Kusherawati Ardianto", role: "Divisi Manager", image: "", socials: {} },
-        { name: "Muhammad Firdaus Alim", role: "Divisi Elektrik", image: "", socials: {} },
-        { name: "Ferry Dicky Hermawan", role: "Divisi Elektrik", image: "", socials: {} },
+        { name: "Aditya Rizky Nurian", role: "Divisi Software", image: "/images/botema/Aditya Rizky Nurian_Software.JPG", socials: {} },
+        { name: "Dhinda Kusherawati Ardianto", role: "Divisi Manager", image: "/images/botema/Dhinda Kusherawati Ardianto_Project Manager.JPG", socials: {} },
+        { name: "Muhammad Firdaus Alim", role: "Divisi Elektrik", image: "/images/botema/Muhammad Firdaus Alim_Elektrik.jpeg", socials: {} },
+        { name: "Ferry Dicky Hermawan", role: "Divisi Elektrik", image: "/images/botema/Ferry Dicky Hermawan_Elektrik.JPG", socials: {} },
     ];
 
     const containerVariants = {
@@ -199,8 +199,19 @@ export default function Botema() {
                                 >
                                     <div className="bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.1)] text-center relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-full h-1 bg-cyan-500" />
-                                        <div className="w-24 h-24 mx-auto rounded-full bg-slate-700 border-2 border-cyan-400 flex items-center justify-center mb-4 overflow-hidden shadow-lg">
-                                            <User className="w-10 h-10 text-cyan-200" />
+                                        <div className="w-[120px] h-[120px] mx-auto rounded-full bg-slate-700 border-2 border-cyan-400 flex items-center justify-center mb-4 overflow-hidden shadow-lg relative">
+                                            {teamMembers[0].image ? (
+                                                <Image
+                                                    src={teamMembers[0].image}
+                                                    alt={teamMembers[0].name}
+                                                    fill
+                                                    className="object-cover"
+                                                    sizes="120px"
+                                                    quality={95}
+                                                />
+                                            ) : (
+                                                <User className="w-10 h-10 text-cyan-200" />
+                                            )}
                                         </div>
                                         <h3 className="text-xl font-bold text-white mb-1">{teamMembers[0].name}</h3>
                                         <p className="text-cyan-400 font-mono text-sm uppercase tracking-wider">Ketua BOTEMA</p>
@@ -231,8 +242,19 @@ export default function Botema() {
                                             variants={itemVariants}
                                             className="relative group bg-slate-900/50 rounded-xl p-4 border border-slate-800 hover:border-slate-600 transition-all flex items-center gap-4 before:content-[''] before:absolute before:-top-8 before:left-1/2 before:w-0.5 before:h-8 before:bg-slate-700 before:-translate-x-1/2 before:hidden sm:before:block"
                                         >
-                                            <div className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center flex-shrink-0">
-                                                <User className="w-6 h-6 text-slate-500" />
+                                            <div className="w-[88px] h-[88px] rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center flex-shrink-0 overflow-hidden relative">
+                                                {member.image ? (
+                                                    <Image
+                                                        src={member.image}
+                                                        alt={member.name}
+                                                        fill
+                                                        className="object-cover"
+                                                        sizes="88px"
+                                                        quality={95}
+                                                    />
+                                                ) : (
+                                                    <User className="w-6 h-6 text-slate-500" />
+                                                )}
                                             </div>
                                             <div>
                                                 <h4 className="text-white font-bold text-sm group-hover:text-cyan-400 transition-colors line-clamp-1">

@@ -22,21 +22,19 @@ export default function Robosarema() {
 
     // Mock Data for Team Members
     const teamMembers = [
-        { name: "Eric Agus Kurniawan Jauhari", role: "Ketua tim", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Faqih Rizaludin", role: "Divisi Elektrik", image: "", socials: { github: "#", linkedin: "#" } },
+        { name: "Eric Agus Kurniawan Jauhari", role: "Ketua tim", image: "/images/sar/ERIC AGUS KURNIAWAN JAUHARI_Ketua_Software.jpg", socials: { github: "#", linkedin: "#" } },
+        { name: "Faqih Rizaludin", role: "Divisi Elektrik", image: "/images/sar/FAQIH RIZALUDIN_Elektrik.jpg", socials: { github: "#", linkedin: "#" } },
         { name: "Saidun Fiddaroini", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "M Faris Asroru Ghifary", role: "Manager", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Gaduh Prakoso", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Dwi Angga Pramana Achmaddillah", role: "Divisi Mekanik", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Dewi Chalissa Rania", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
+        { name: "M Faris Asroru Ghifary", role: "Manager", image: "/images/sar/M FARIS ASRORU GHIFARY_Manajer_Elektrik_Mekanik.jpg", socials: { github: "#", linkedin: "#" } },
+        { name: "Dwi Angga Pramana Achmaddillah", role: "Divisi Mekanik", image: "/images/sar/DWI ANGGA PRAMANA_Mekanik.jpg", socials: { github: "#", linkedin: "#" } },
+        { name: "Dewi Chalissa Rania", role: "Divisi Software", image: "/images/sar/DEWI CHALISSA RANIA_Software.jpg", socials: { github: "#", linkedin: "#" } },
         { name: "Hanik Kamila", role: "Manager", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Bisma Adhiaksa", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
+        { name: "Bisma Adhiaksa", role: "Divisi Software", image: "/images/sar/BISMA ADHIAKSA_Software.jpg", socials: { github: "#", linkedin: "#" } },
         { name: "Ferdian Irawan Syahputra", role: "Divisi Elektrik", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Yoggy Pratama", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
+        { name: "Yoggy Pratama", role: "Divisi Software", image: "/images/sar/YOGGY PRATAMA_Elektrik.jpg", socials: { github: "#", linkedin: "#" } },
         { name: "Nuzulmi Oktafianto R.", role: "Divisi Elektrik", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Muhammad Rafif Erdiansya", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Ilham Ramadhan", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#" } },
-        { name: "Wilhelmus Zakharia Bimantara", role: "Divisi Software", image: "", socials: { github: "#", linkedin: "#", instagram: "#" } },
+        { name: "Muhammad Rafif Erdiansya", role: "Divisi Elektrik", image: "/images/sar/WILHELMUS ZAKHARIA BIMANTARA_Elektrik.jpg", socials: { github: "#", linkedin: "#" } },
+        { name: "Wilhelmus Zakharia Bimantara", role: "Divisi Elektrik", image: "/images/sar/ILHAM RAMADHAN PERMADI_Mekanik.jpg", socials: { github: "#", linkedin: "#", instagram: "#" } },
     ];
 
     const containerVariants = {
@@ -197,8 +195,19 @@ export default function Robosarema() {
                                 >
                                     <div className="bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 border border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.1)] text-center relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-full h-1 bg-cyan-500" />
-                                        <div className="w-24 h-24 mx-auto rounded-full bg-slate-700 border-2 border-cyan-400 flex items-center justify-center mb-4 overflow-hidden shadow-lg">
-                                            <User className="w-10 h-10 text-cyan-200" />
+                                        <div className="w-[120px] h-[120px] mx-auto rounded-full bg-slate-700 border-2 border-cyan-400 flex items-center justify-center mb-4 overflow-hidden shadow-lg relative">
+                                            {teamMembers[0].image ? (
+                                                <Image
+                                                    src={teamMembers[0].image}
+                                                    alt={teamMembers[0].name}
+                                                    fill
+                                                    className="object-cover"
+                                                    sizes="120px"
+                                                    quality={95}
+                                                />
+                                            ) : (
+                                                <User className="w-10 h-10 text-cyan-200" />
+                                            )}
                                         </div>
                                         <h3 className="text-xl font-bold text-white mb-1">{teamMembers[0].name}</h3>
                                         <p className="text-cyan-400 font-mono text-sm uppercase tracking-wider">Ketua ROBOSAREMA</p>
@@ -229,8 +238,19 @@ export default function Robosarema() {
                                             variants={itemVariants}
                                             className="relative group bg-slate-900/50 rounded-xl p-4 border border-slate-800 hover:border-slate-600 transition-all flex items-center gap-4 before:content-[''] before:absolute before:-top-8 before:left-1/2 before:w-0.5 before:h-8 before:bg-slate-700 before:-translate-x-1/2 before:hidden sm:before:block"
                                         >
-                                            <div className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center flex-shrink-0">
-                                                <User className="w-6 h-6 text-slate-500" />
+                                            <div className="w-[88px] h-[88px] rounded-full bg-slate-800 border-2 border-slate-700 flex items-center justify-center flex-shrink-0 overflow-hidden relative">
+                                                {member.image ? (
+                                                    <Image
+                                                        src={member.image}
+                                                        alt={member.name}
+                                                        fill
+                                                        className="object-cover"
+                                                        sizes="88px"
+                                                        quality={95}
+                                                    />
+                                                ) : (
+                                                    <User className="w-6 h-6 text-slate-500" />
+                                                )}
                                             </div>
                                             <div>
                                                 <h4 className="text-white font-bold text-sm group-hover:text-cyan-400 transition-colors line-clamp-1">
